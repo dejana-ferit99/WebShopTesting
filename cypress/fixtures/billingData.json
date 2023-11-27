@@ -1,0 +1,14 @@
+{
+    "billingData": [
+        {
+            "firstName": "Ana",
+            "lastName": "Anic",
+            "email": "anaanic6@gmail.com",
+            "countryId": "24",
+            "city": "Osijek",
+            "address": "Osjecka 21",
+            "postalCode": "31000",
+            "phoneNumber": "0987654321"
+        }
+    ]
+}
