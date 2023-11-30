@@ -1,10 +1,10 @@
 import Login from "../../PageObjects/loginPage"
 
-describe('Login page functionalities', () => {
+describe('Login page functionalities', { tags: ['@login'] }, () => {
 
     const loginPage = new Login;
 
-    it("Check if user can log in with valid credentials", { tags: ['@login'] }, function () {
+    it("Check if user can log in with valid credentials", function () {
 
         cy.fixture('loginData').then((data) => {
 

@@ -9,7 +9,7 @@ describe('Shopping cart page functionalities', () => {
             .visit('')
     });
 
-    it('Check if user can open Shopping cart without items in shopping cart', function () {
+    it('Check if user can open Shopping cart without items in shopping cart', { tags: ['@smoke'] }, function () {
 
         cy
             .get('#topcartlink > .ico-cart').click()

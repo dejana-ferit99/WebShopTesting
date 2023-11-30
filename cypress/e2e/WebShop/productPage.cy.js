@@ -9,7 +9,7 @@ describe('Product page functinalities', () => {
             .visit('/apparel-shoes')
     });
 
-    it("Check if user can open Wishlist with items in wishlist", function () {
+    it("Check if user can open Wishlist with items in wishlist", { tags: ['@smoke'] }, function () {
         cy
             .productPageNavigation()
         productPage.addToWishlist()
@@ -41,7 +41,7 @@ describe('Product page functinalities', () => {
             .get('form > .buttons > .button-1').click()
             .get('div.result').should('have.text', 'Product review is successfully added.')
     })
-    it("Check if user can add item to wishlist", function () {
+    it("Check if user can add item to wishlist", { tags: ['@smoke'] }, function () {
         cy
             .productPageNavigation()
         productPage.addToWishlist()

@@ -19,14 +19,14 @@ describe("Welcome page functionalities", function () {
             })
 
     })
-    it("Check if user can see a submenu of Computers from header menu", function () {
+    it("Check if user can see a submenu of Computers from header menu", { tags: ['@smoke'] }, function () {
 
         cy
             .get('.top-menu > :nth-child(2) > [href="/computers"]').trigger('mouseover')
             .get('.top-menu > :nth-child(2) > ul > li').should('have.length', 3)
 
     })
-    it("Check if user can open Wishlist without items in wishlist", function () {
+    it("Check if user can open Wishlist without items in wishlist", { tags: ['@smoke'] }, function () {
 
         cy
             .get('.ico-wishlist > .cart-label').click()
@@ -89,7 +89,7 @@ describe("Welcome page functionalities", function () {
             .get('#pollanswers-2').click()
 
     })
-    it("Check if user can search an item", function () {
+    it("Check if user can search an item", { tags: ['@smoke'] }, function () {
 
         welcomePage.searchItem()
         welcomePage.checkSearchResults()

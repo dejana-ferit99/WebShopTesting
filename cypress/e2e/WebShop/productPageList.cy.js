@@ -7,12 +7,12 @@ describe('Product list functionalities', () => {
         cy
             .visit('')
     });
-    it("Check if user can open all Books avaliable from header menu", function () {
+    it("Check if user can open all Books avaliable from header menu", { tags: ['@smoke'] }, function () {
         cy
             .get('.top-menu > :nth-child(1) > a').click()
             .get('h1').should('have.text', 'Books')
     })
-    it("Check if user can correctly filter by price", function () {
+    it("Check if user can correctly filter by price", { tags: ['@smoke'] }, function () {
         cy
             .visit('/books')
         productPageList.selectPriceRange()
@@ -26,7 +26,7 @@ describe('Product list functionalities', () => {
         productPageList.removePriceRange()
     })
 
-    it("Check if user can correctly display 4 items per page", function () {
+    it("Check if user can correctly display 4 items per page", { tags: ['@smoke'] }, function () {
         cy
             .visit("/books")
         productPageList.selectPageSize4()
