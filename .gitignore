@@ -1,3 +1,5 @@
-WebShopTesting/node_modules/
-WebShopTesting/cypress/downloads
-WebShopTesting/cypress/screenshots
+node_modules/
+.DS_Store
+cypress/screenshots/
+cypress/download
+
