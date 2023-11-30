@@ -1,1 +1,3 @@
-node_modules/
+WebShopTesting/node_modules/
+WebShopTesting/cypress/downloads
+WebShopTesting/cypress/screenshots
