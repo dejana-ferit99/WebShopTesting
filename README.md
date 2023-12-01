@@ -7,14 +7,12 @@ Test cases and results of each can be found [here](https://docs.google.com/sprea
 
 #### Instalation steps
 To run this Cypress script, you need to install the following:
-Download Node.js installer for you OS from [official page](https://nodejs.org/en/download/)
+Download Node.js installer for you OS from [official page](https://nodejs.org/en/download/).
 Follow the steps and install node.js on you computer
 Open Terminal or Command Prompt and check Node installation with this command:
- 
-	```console
+	```
 		node -v
   	```
-   
 Download Visual Studio Code from [official page](https://code.visualstudio.com/download)
 	5. Install VSC following the steps
 	6. Download link of this project to your computer
