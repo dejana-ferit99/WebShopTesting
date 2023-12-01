@@ -4,12 +4,16 @@ This app is testing functionalities of [Demo Web page](https://demowebshop.trice
 
 ### Installation:
 Test cases and results of each can be found [here](https://docs.google.com/spreadsheets/d/1v-j0Kw_QRvNQrnGy4LDS51WABCOYdNV3_cQ2ksRf04c/edit?usp=sharing)
+
 #### Instalation steps
 To run this Cypress script, you need to install the following:
 	1. Download Node.js installer for you OS from official page (https://nodejs.org/en/download/)
 	2. Follow the steps and install node.js on you computer
 	3. Open Terminal or Command Prompt and check Node installation with this command:
+	 ```console
 		node -v
+	```
+		
 	4. Download Visual Studio Code from official page (https://code.visualstudio.com/download)
 	5. Install VSC following the steps
 	6. Download link of this project to your computer
