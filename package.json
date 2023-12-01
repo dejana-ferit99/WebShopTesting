@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "login": "npx cypress run --e2e  --env grepTags=@login",
-    "smoke": "npx cypress run --e2e  --env grepTags=@login",
+    "smoke": "npx cypress run --e2e  --env grepTags=@smoke",
     "order": "npx cypress run --e2e  --env grep=\"order\"",
     "wishlist": "npx cypress run --e2e  --env grep=\"wishlist\""
   },
