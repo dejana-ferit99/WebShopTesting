@@ -12,6 +12,7 @@ To run this Cypress script, you need to install the following:
 	3. Open Terminal or Command Prompt and check Node installation with this command:
 	 ```console
 		node -v
+  	```
 	4. Download Visual Studio Code from official page (https://code.visualstudio.com/download)
 	5. Install VSC following the steps
 	6. Download link of this project to your computer
