@@ -7,9 +7,8 @@ Test cases and results of each can be found [here](https://docs.google.com/sprea
 
 #### Instalation steps
 To run this Cypress script, you need to install the following:
-Download Node.js installer for you OS from [official page](https://nodejs.org/en/download/).
-Follow the steps and install node.js on you computer
-Open Terminal or Command Prompt and check Node installation with this command:
+1.Download Node.js installer for you OS from [official page](https://nodejs.org/en/download/). Follow the steps and install node.js on you computer.
+2.Open Terminal or Command Prompt and check Node installation with this command:
 	```
 		node -v
   	```
