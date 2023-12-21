@@ -1,23 +1,27 @@
 class ProductPage {
+
+    btnAddToCart = '#add-to-wishlist-button-28'
+    cartNumber = '.ico-wishlist > .cart-label'
+    itemInCart = '.cart-item-row'
+    wishlistNumber = '.wishlist-qty'
+
     addToWishlist() {
         cy
-            .get('#add-to-wishlist-button-28')
+            .get(this.btnAddToCart)
             .click()
     }
     openWishlist() {
         cy
-            .get('.ico-wishlist > .cart-label')
+            .get(this.cartNumber)
             .click()
     }
     getWishlistItem() {
         cy
-            .get('.cart-item-row')
-            .should('have.length', 1)
+            .get(this.itemInCart)
     }
     changeWishlist() {
         cy
-            .get('.wishlist-qty')
-            .should('have.text', '(1)')
+            .get(this.wishlistNumber)
     }
 }
 

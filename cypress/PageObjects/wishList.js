@@ -1,24 +1,35 @@
 class WishlistPage {
+
+    qtyInput = '.qty-input'
+    btnUpdateWishlist = '.update-wishlist-button'
+    selMoveToCart = '.add-to-cart > input'
+    btnMoveToCart = '.wishlist-add-to-cart-button'
+    qtyCart = '.cart-qty'
+
     changeWishlistQuanity() {
         cy
-            .get('.qty-input')
+            .get(this.qtyInput)
             .clear()
-            .type('2')
     }
     updateWishlist() {
         cy
-            .get('.update-wishlist-button')
+            .get(this.btnUpdateWishlist)
             .click()
     }
     verifyWishlistUpdate() {
         cy
-            .get('.qty-input')
-            .should('have.value', '2')
+            .get(this.qtyInput)
     }
     moveToShoppingCart() {
         cy
-            .get('.add-to-cart > input')
+            .get(this.selMoveToCart)
             .click()
+            .get(this.btnMoveToCart)
+            .click()
+    }
+    verifyShoppingCartUpdate() {
+        cy
+            .get(this.qtyCart)
     }
 }
 export default WishlistPage;

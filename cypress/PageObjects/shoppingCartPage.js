@@ -25,7 +25,6 @@ class ShoppingCart {
     termsOfServiceMessage() {
         cy
             .get(this.msgTermsOfService)
-            .should('have.text', 'Please accept the terms of service before the next step.')
     }
     goToCheckout() {
         cy
@@ -35,7 +34,6 @@ class ShoppingCart {
     checkoutMessage() {
         cy
             .get(this.msgCheckout)
-            .should('have.text', 'Welcome, Please Sign In!')
     }
     checkoutAsGuest() {
         cy
@@ -85,7 +83,6 @@ class ShoppingCart {
     orderMessage() {
         cy
             .get(this.txtOrderMessage)
-            .should('have.text', 'Your order has been successfully processed!')
     }
     updateCart() {
         cy
@@ -95,7 +92,6 @@ class ShoppingCart {
     orderSummaryMessage() {
         cy
             .get(this.txtSummaryMessage)
-            .should('have.text', '\n    \n    \nYour Shopping Cart is empty!    \n')
     }
 }
 

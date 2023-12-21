@@ -2,24 +2,15 @@
     "registrationData": [
         {
             "firstName": "Ana",
-            "lastName": "Anic",
-            "email": "anaanic6@gmail.com",
-            "password": "1234567890Ana",
-            "confirmPassword": "1234567890Ana"
+            "lastName": "Anic"
         },
         {
-            "firstName": "Ana",
-            "lastName": "Anic",
-            "email": "anaanic3",
-            "password": "1234567890Ana",
-            "confirmPassword": "1234567890Ana"
+            "firstName": "Mara",
+            "lastName": "Maric"
         },
         {
-            "firstName": "Ana",
-            "lastName": "Anic",
-            "email": "anaanic7@gmail.com",
-            "password": "1234567890Ana",
-            "confirmPassword": "1234567890"
+            "firstName": "Marko",
+            "lastName": "Markovic"
         }
     ]
 }

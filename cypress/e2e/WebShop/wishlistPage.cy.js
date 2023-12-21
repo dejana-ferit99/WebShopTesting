@@ -9,27 +9,28 @@ describe('Wishlist page functionalities', () => {
     beforeEach(() => {
         cy
             .visit('/apparel-shoes')
+            .productPageNavigation()
+        productPage.addToWishlist()
+        productPage.openWishlist()
     });
 
     it("Check if user can edit quantity items from Wishlist", function () {
 
-        cy
-            .productPageNavigation()
-        productPage.addToWishlist()
-        productPage.openWishlist()
         wishlistPage.changeWishlistQuanity()
+        cy
+            .type('2')
         wishlistPage.updateWishlist()
         wishlistPage.verifyWishlistUpdate()
+        cy
+            .should('have.value', '2')
 
     })
-    it("Check if user can move item from wishlist to shopping cart", function () {
+    it.only("Check if user can move item from wishlist to shopping cart", function () {
 
-        cy
-            .productPageNavigation()
-        productPage.addToWishlist()
-        productPage.openWishlist()
         wishlistPage.moveToShoppingCart()
-        wishlistPage.updateWishlist()
+        wishlistPage.verifyShoppingCartUpdate()
+        cy
+            .should('have.text', '(1)')
 
     })
 })

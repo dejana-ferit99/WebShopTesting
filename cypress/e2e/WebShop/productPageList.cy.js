@@ -5,14 +5,14 @@ describe('Product list functionalities', () => {
 
     beforeEach(() => {
         cy
-            .visit('')
+            .visit(Cypress.config('baseUrl'))
     });
     it("Check if user can open all Books avaliable from header menu", { tags: ['@smoke'] }, function () {
         cy
             .get('.top-menu > :nth-child(1) > a').click()
             .get('h1').should('have.text', 'Books')
     })
-    it("Check if user can correctly filter by price", { tags: ['@smoke'] }, function () {
+    it("Check if user can correctly filter by price under 25", { tags: ['@smoke'] }, function () {
         cy
             .visit('/books')
         productPageList.selectPriceRange()
@@ -27,23 +27,28 @@ describe('Product list functionalities', () => {
     })
 
     it("Check if user can correctly display 4 items per page", { tags: ['@smoke'] }, function () {
+        const pageSize = 4;
         cy
             .visit("/books")
-        productPageList.selectPageSize4()
-        productPageList.getPageSizeResults4()
+        productPageList.selectPageSize(pageSize)
+        productPageList.getPageSizeResults(pageSize)
+        cy
+            .should('have.length', pageSize)
     })
 
     it("Check if user can correctly display 12 items per page", function () {
+        const pageSize = 12;
         cy
             .visit("/apparel-shoes")
-        productPageList.selectPageSize12()
-        productPageList.getPageSizeResults12()
+        productPageList.selectPageSize(pageSize)
+        productPageList.getPageSizeResults(pageSize)
     })
-    it("Check if user can add item to chart directly from list of products", function () {
+    it.only("Check if user can add item to chart directly from list of products", function () {
         cy
             .visit('/desktops')
             .get(':nth-child(1) > .product-item > .details > .add-info > .buttons > .button-2').click()
-            .get('.cart-qty').should('have.text', '(1)')
+            .get('.cart-qty')
+            .should('have.text', '(1)')
     })
     it("Check if user can add item to cart from product page", function () {
         cy

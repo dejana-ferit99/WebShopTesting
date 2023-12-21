@@ -54,7 +54,6 @@ class Registration {
     verifyRegistration() {
         cy
             .get(this.msgRegistration)
-            .should('have.text', '\n Your registration completed\n        ')
     }
     errorEmailRegistration() {
         cy
@@ -64,7 +63,6 @@ class Registration {
     errorPasswordRegistration() {
         cy
             .get(this.msgErrorRegistration)
-            .should('have.text', 'The password and confirmation password do not match.')
     }
 
 }

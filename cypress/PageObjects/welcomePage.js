@@ -22,22 +22,20 @@ class WelcomePage {
     signToNewsletterMsg() {
         cy
             .get(this.msgSignToNewsletter)
-            .should('have.text', 'Thank you for signing up! A verification email has been sent. We appreciate your interest.')
     }
     signToNewsletterErrorMsg() {
         cy
             .get(this.msgSignToNewsletterError)
-            .should('have.text', 'Enter valid email')
     }
-    searchItem() {
+    searchItem(item) {
         cy
             .get(this.inputSearch)
-            .type('computer')
+            .type(item)
     }
-    checkSearchResults() {
+    checkSearchResults(item) {
         cy
             .get(this.searchResult)
-            .contains('computer')
+            .contains(item)
     }
     openSearchItem() {
         cy
@@ -47,7 +45,6 @@ class WelcomePage {
     checkSearchItem() {
         cy
             .get(this.itemName)
-            .should('have.text', '\n                                Build your own cheap computer\n                            ')
     }
 }
 

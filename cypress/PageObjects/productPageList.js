@@ -23,29 +23,16 @@ class ProductPageList {
             .get(this.delPriceRange)
             .click()
     }
-    selectPageSize4() {
+    selectPageSize(pageSize) {
         cy
             .get(this.selPageSize)
-            .select('4')
+            .select(pageSize.toString())
     }
-    getPageSizeResults4() {
+    getPageSizeResults(pageSize) {
         cy
             .get(this.productGrid)
             .find(this.productBox)
-            .should('have.length', 4)
     }
-    selectPageSize12() {
-        cy
-            .get(this.selPageSize)
-            .select('12')
-    }
-    getPageSizeResults12() {
-        cy
-            .get(this.productGrid)
-            .find(this.productBox)
-            .should('have.length', 12)
-    }
-
 }
 
 export default ProductPageList;

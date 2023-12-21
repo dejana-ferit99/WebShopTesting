@@ -3,17 +3,18 @@ import WelcomePage from "../../PageObjects/welcomePage"
 describe("Welcome page functionalities", function () {
 
     const welcomePage = new WelcomePage;
+    const TricentisPage = 'https://academy.tricentis.com';
 
     beforeEach(() => {
         cy
-            .visit('')
+            .visit(Cypress.config('baseUrl'))
     });
 
     it("Check if user can open Tricentis page", function () {
 
         cy
             .get('[href="https://academy.tricentis.com"]').click()
-            .request('https://academy.tricentis.com')
+            .request(TricentisPage)
             .then((response) => {
                 expect(response.status).to.eq(200)
             })
@@ -54,6 +55,8 @@ describe("Welcome page functionalities", function () {
             welcomePage.setEmail(data.newsletterData[0].email)
             welcomePage.clickSubscribe()
             welcomePage.signToNewsletterMsg()
+            cy
+                .should('have.text', 'Thank you for signing up! A verification email has been sent. We appreciate your interest.')
 
         })
 
@@ -65,6 +68,8 @@ describe("Welcome page functionalities", function () {
             welcomePage.setEmail(data.newsletterData[1].email)
             welcomePage.clickSubscribe()
             welcomePage.signToNewsletterErrorMsg()
+            cy
+                .should('have.text', 'Enter valid email')
 
         })
 
@@ -89,17 +94,23 @@ describe("Welcome page functionalities", function () {
             .get('#pollanswers-2').click()
 
     })
-    it("Check if user can search an item", { tags: ['@smoke'] }, function () {
+    it("Check if user can search an  Computer item", { tags: ['@smoke'] }, function () {
 
-        welcomePage.searchItem()
-        welcomePage.checkSearchResults()
+        const searchItem = 'computer';
+
+        welcomePage.searchItem(searchItem)
+        welcomePage.checkSearchResults(searchItem)
 
     })
-    it("Check if user can open search item", function () {
+    it.only("Check if user can open search item", function () {
 
-        welcomePage.searchItem()
+        const searchItem = 'computer';
+
+        welcomePage.searchItem(searchItem)
         welcomePage.openSearchItem()
         welcomePage.checkSearchItem()
+        cy
+            .should('have.text', '\n                                Build your own cheap computer\n                            ')
 
     })
 

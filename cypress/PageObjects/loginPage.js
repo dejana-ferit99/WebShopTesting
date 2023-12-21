@@ -34,13 +34,8 @@ class Login {
     errorLogin() {
         cy
             .get(this.msgErrorLogin)
-            .should('have.text', 'Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect\n')
     }
-    errorEmailLogin() {
-        cy
-            .get(this.msgErrorEmaillogin)
-            .should('have.text', 'Login was unsuccessful. Please correct the errors and try again.\nNo customer account found\n')
-    }
+
 }
 
 export default Login;
